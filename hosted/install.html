@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+    <meta content="JJ Palacios" name="author">
+		<title>Instalador - Geolocalización en Google Maps - JJ Palacios</title>
+		<script type="text/javascript" src="http://zeptojs.com/zepto.min.js"></script>
+	</head>
+	<body>
+		<div id="install">Estado de la instalación de Geolocalización 0.1 beta</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var gManifestName = location.href.replace("install.html", "") + 'manifest.webapp';
+				var request = navigator.mozApps.checkInstalled(gManifestName);
+				request.onsuccess = function(){
+					if(request.result)
+						$("#install").text("La app ya está instalada."); //App instalada
+					else{
+						$("#install").html("<input type='button' value='Instalar'>");
+						$("#install").click(function(){
+							var req = navigator.mozApps.install(gManifestName);
+							req.onsuccess = function(data){
+								$("#install").text("La app ha sido instalada.").unbind('click');
+							}
+							req.onerror = function(errObj){
+								alert("Error de instalación: " + this.error.name);
+							}
+						});
+					}
+				}
+				request.onerror = function(){
+					alert("Error de instalación: " + this.error.message);
+				}
+			});
+		</script>
+	</body>
+</html>

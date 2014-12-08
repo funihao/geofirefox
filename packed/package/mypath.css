@@ -1,0 +1,36 @@
+* {  
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Droid Sans', 'Helvetica', Arial, sans-serif;
+}
+
+header{
+  display: block;
+  height: 50px;
+  left: 0;
+  position: absolute; /* posición absoluta a navegador */
+  right: 0;
+  top: 0; /* ajusta a borde de navegador */
+  vertical-align: middle;
+}
+
+nav {
+  display: block;
+  height: 50px;
+  position: absolute; /* posición absoluta a navegador */
+  right: 0;
+  top: 0;
+}
+
+#map{
+  display: block;
+  position: absolute; /* posición absoluta a navegador */
+  top: 50px; /* 50px debajo de borde de navegador */
+  left: 0; /* ajusta a borde de navegador */
+  right: 0;
+  bottom: 0;
+  background: rgba(0,255,0,0.5); /* verde si no hay mapa */
+}

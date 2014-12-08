@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+    <meta content="JJ Palacios" name="author">
+		<title>Play Store JJ Palacios - Geolocalización en Google Maps</title>
+	</head>
+
+	<body>
+		<p>Página de Auto-Instalación App Geolocalizazión</p>
+
+		<script>
+			(function(){
+				var manifestUrl = location.href.replace("index.html", "") + 'package.manifest';
+
+				if(! navigator.mozApps.installPackage){
+					alert('ERROR: Esta aplicación no es compatible con su dispositivo.');
+					return;
+				}
+
+				var req = navigator.mozApps.installPackage(manifestUrl);
+
+				req.onsuccess = function(){
+					alert("Instalación completada con exito: " + this.result.origin);
+				};
+
+				req.onerror = function(){
+					alert("Error de instalación: " + this.error.name);
+				};
+			})();
+		</script>
+	</body>
+</html>

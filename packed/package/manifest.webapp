@@ -1,0 +1,32 @@
+{
+	"version": "0.1beta",
+
+	"name": "Geoloc",
+
+	"description": "Geolocalización usando Google Maps. Dibuja la ruta entre destinos y recuerda las rutas.",
+
+	"launch_path": "/obligatorio5.html",
+
+	"icons": {
+		"16":	"/icon_16.png",
+		"48":	"/icon_48.png",
+		"60":	"/icon_60.png",
+		"128":	"/icon_128.png"
+	},
+
+	"developer":{
+		"name": "JJ Palacios",
+		"url": "Nothing"
+	},
+
+	"default_locale": "es",
+	
+	"permissions":{
+		"geolocation":{
+			"description": "Necesario para mostrar tu localización."
+		},
+		"storage":{
+			"description": "Mejora el rendimiento guardando datos localmente."
+		}
+	}  
+}
